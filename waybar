@@ -1,39 +1,30 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 30,
-    "spacing": 4,
-    "modules-left": ["sway/workspaces", "sway/mode"],
+    "height": 32,
+    "modules-left": ["sway/workspaces"],
     "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "network", "cpu", "memory", "clock", "tray"],
+    "modules-right": ["network", "clock"],
 
     "sway/workspaces": {
         "disable-scroll": true,
-        "all-outputs": true,
         "format": "{name}"
     },
-    "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+
+    "sway/window": {
+        "format": "{title}",
+        "max-length": 50
     },
-    "cpu": {
-        "format": "CPU: {usage}%",
-        "tooltip": false
-    },
-    "memory": {
-        "format": "RAM: {}%"
-    },
+
     "network": {
-        "format-wifi": " {essid}",
-        "format-ethernet": "󰈀 Wired",
-        "format-disconnected": "Disconnected"
+        "format-wifi": "{ipaddr}",
+        "format-ethernet": "{ipaddr}",
+        "format-disconnected": "offline",
+        "tooltip-format": "{ifname} via {gwaddr}"
     },
-    "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-muted": "󰝟 Muted",
-        "format-icons": {
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
+
+    "clock": {
+        "format": "{:%Y-%m-%d  %H:%M}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>"
     }
 }
