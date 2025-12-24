@@ -1,0 +1,18 @@
+[main]
+font=JetBrains Mono:size=14
+pad=10x10
+
+[colors]
+alpha=0.9
+background=1e1e2e
+foreground=cdd6f4
+
+## Catppuccin Mocha Palette for Foot
+regular0=45475a  # surface1
+regular1=f38ba8  # red
+regular2=a6e3a1  # green
+regular3=f9e2af  # yellow
+regular4=89b4fa  # blue
+regular5=f5c2e7  # pink
+regular6=94e2d5  # teal
+regular7=bac2de  # subtext1
