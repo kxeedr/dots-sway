@@ -1,16 +1,14 @@
 /* Catppuccin Mocha Palette */
-@define-color base #1e1e2e;
+@define-color base   #1e1e2e;
 @define-color mantle #181825;
-@define-color crust #11111b;
-@define-color text #cdd6f4;
-@define-color lavender #b4befe;
-@define-color mauve #cba6f7;
-@define-color red #f38ba8;
+@define-color text   #cdd6f4;
+@define-color mauve  #cba6f7;
+@define-color blue   #89b4fa;
 @define-color surface0 #313244;
 
 * {
-    font-family: "JetBrains Mono", "Roboto", sans-serif;
-    font-size: 13px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 14px;
     border: none;
     border-radius: 0;
 }
@@ -18,32 +16,38 @@
 window#waybar {
     background-color: @base;
     color: @text;
-    border-bottom: 2px solid @lavender;
+    border-bottom: 2px solid @surface0;
 }
 
+/* Left: Workspaces */
 #workspaces button {
-    padding: 0 5px;
-    background-color: transparent;
+    padding: 0 10px;
     color: @text;
 }
 
 #workspaces button.focused {
     color: @mauve;
-    border-bottom: 2px solid @mauve;
+    background-color: @surface0;
 }
 
-#workspaces button:hover {
-    background: @surface0;
-    color: @lavender;
+/* Center: Window Name */
+#window {
+    font-weight: bold;
+    color: @blue;
 }
 
-#clock, #cpu, #memory, #network, #pulseaudio, #tray {
-    padding: 0 10px;
-    margin: 4px 2px;
+/* Right: IP and Clock */
+#network, #clock {
+    padding: 0 15px;
     background-color: @mantle;
-    border-radius: 8px;
+    margin: 4px 2px;
+    border-radius: 4px;
 }
 
-#pulseaudio { color: @lavender; }
-#network { color: @mauve; }
-#cpu { color: @red; }
+#network {
+    color: @mauve;
+}
+
+#clock {
+    color: @text;
+}
